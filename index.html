@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tahmid Panix</title>
 
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
     integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -14,52 +15,50 @@
 </head>
 
 <body>
-  <!-- Navbar -->
-<!-- Navbar -->
-<nav class="navbar">
-  <a href="#home" class="logo">
-    <img src="profile-modified.png" alt="CyberPanix Logo" class="logo-img"> CyberPanix
-  </a>
-  <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#products">Products</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
 
+  <!-- Navbar -->
+  <nav class="navbar" data-animate>
+    <a href="#home" class="logo">
+      <img src="profile-modified.png" alt="CyberPanix Logo" class="logo-img"> CyberPanix
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
-    <div class="hero-content">
-      <h1 class="neon-title">Full-Stack Developer</h1>
-      <p>Building cheats of Free-Fire that enhance gameplay.</p>
-      <p class="highlight">Specializing in panels with modern UI</p>
-      <a href="https://discord.gg/S4ZatkDC" target="_blank" class="cta-button">Let's Play</a>
-
+    <div class="hero-content" data-animate>
+      <h1 class="neon-title" data-animate>Full-Stack Developer</h1>
+      <p data-animate>Building cheats of Free-Fire that enhance gameplay.</p>
+      <p class="highlight" data-animate>Specializing in panels with modern UI</p>
+      <a href="https://discord.gg/S4ZatkDC" target="_blank" class="cta-button" data-animate>Let's Play</a>
     </div>
-    <div class="hero-image">
+    <div class="hero-image" data-animate>
       <img src="profile-modified.png" alt="profile" class="profile-img">
     </div>
   </section>
 
   <!-- Products Section -->
-  <section id="products" class="products">
-    <h2>Our Products</h2>
+  <section id="products" class="products" data-animate>
+    <h2 data-animate>Our Products</h2>
     <div class="products-grid">
-      <div class="product-card">
+      <div class="product-card" data-animate>
         <img src="image3.png" alt="Product 1">
         <h3>BASIC PANEL</h3>
         <p>PRICE-150INR</p>
         <a href="https://discord.gg/S4ZatkDC" target="_blank" class="cta-button">Buy Now</a>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-animate>
         <img src="image1.png" alt="Product 2">
         <h3>EXTERNAL PANEL</h3>
         <p>PRICE-299INR</p>
         <a href="https://discord.gg/S4ZatkDC" target="_blank" class="cta-button">Buy Now</a>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-animate>
         <img src="image4.png" alt="Product 3">
         <h3>PREMIUM PANEL</h3>
         <p>PRICE-400INR</p>
@@ -69,20 +68,20 @@
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="skills">
-    <h2>Technical Expertise</h2>
+  <section id="skills" class="skills" data-animate>
+    <h2 data-animate>Technical Expertise</h2>
     <div class="skills-grid">
-      <div class="skills-card">
+      <div class="skills-card" data-animate>
         <i class="fa-solid fa-code"></i>
         <h3>Panix Development</h3>
         <p>React, Python, HTML5, CSS3, Java</p>
       </div>
-      <div class="skills-card">
+      <div class="skills-card" data-animate>
         <i class="fa-solid fa-server"></i>
         <h3>Panel Development</h3>
         <p>Node.js, SQL</p>
       </div>
-      <div class="skills-card">
+      <div class="skills-card" data-animate>
         <i class="fa-solid fa-paintbrush"></i>
         <h3>UI/UX Design</h3>
         <p>Figma, Adobe XD, Prototyping</p>
@@ -93,7 +92,7 @@
   <!-- Footer -->
   <footer id="contact">
     <p>&copy; 2025 CyberPanix. All rights reserved</p>
-    <div class="social-links">
+    <div class="social-links" data-animate>
       <a href="https://facebook.com/YourFacebookUsername" target="_blank">
         <i class="fa-brands fa-facebook"></i>
       </a>
@@ -109,44 +108,53 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="script.js"></script>
- <script>
-  // Create popup container
-  const popup = document.createElement('div');
-  popup.classList.add('image-popup');
-  popup.innerHTML = '<img src="" alt="Full Image">';
-  document.body.appendChild(popup);
 
-  const popupImg = popup.querySelector('img');
+  <!-- Image Popup Script -->
+  <script>
+    const popup = document.createElement('div');
+    popup.classList.add('image-popup');
+    popup.innerHTML = '<img src="" alt="Full Image">';
+    document.body.appendChild(popup);
 
-  // Add click event to all product images
-  document.querySelectorAll('.product-card img').forEach(img => {
-    img.addEventListener('click', () => {
-      popupImg.src = img.src;
-      popup.classList.add('show');
-      popupImg.style.transform = 'scale(1)'; // Reset zoom
-      zoomLevel = 1;
+    const popupImg = popup.querySelector('img');
+    document.querySelectorAll('.product-card img').forEach(img => {
+      img.addEventListener('click', () => {
+        popupImg.src = img.src;
+        popup.classList.add('show');
+        popupImg.style.transform = 'scale(1)';
+        zoomLevel = 1;
+      });
     });
-  });
+    popup.addEventListener('click', (e) => {
+      if (e.target !== popupImg) popup.classList.remove('show');
+    });
+    let zoomLevel = 1;
+    popup.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      if (popup.classList.contains('show')) {
+        zoomLevel += e.deltaY * -0.001; 
+        zoomLevel = Math.min(Math.max(zoomLevel, 1), 3);
+        popupImg.style.transform = `scale(${zoomLevel})`;
+      }
+    });
+  </script>
 
-  // Close popup on click outside the image
-  popup.addEventListener('click', (e) => {
-    if (e.target !== popupImg) {
-      popup.classList.remove('show');
-    }
-  });
+  <!-- Custom Scroll Animation Script -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        } else {
+          entry.target.classList.remove('animate');
+        }
+      });
+    }, { threshold: 0.2 });
 
-  // Zoom with scroll
-  let zoomLevel = 1;
-  popup.addEventListener('wheel', (e) => {
-    e.preventDefault();
-    if (popup.classList.contains('show')) {
-      zoomLevel += e.deltaY * -0.001; 
-      zoomLevel = Math.min(Math.max(zoomLevel, 1), 3); // Limit zoom (1x to 3x)
-      popupImg.style.transform = `scale(${zoomLevel})`;
-    }
-  });
-</script>
+    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+  </script>
 
 </body>
 </html>
